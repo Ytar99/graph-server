@@ -7,7 +7,7 @@ class EchoTCPHandler(socketserver.BaseRequestHandler):
 
     def handle(self):
         data = self.request.recv(1024).strip()
-        print('From [{}]: '.format(self.client_address[0], date.decode()))
+        print('From [{0}]: {1}'.format(self.client_address[0], data.decode()))
         self.request.sendall(data)
 
 if __name__ == '__main__':
